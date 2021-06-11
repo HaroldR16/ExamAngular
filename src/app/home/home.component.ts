@@ -33,9 +33,11 @@ export class HomeComponent implements OnInit {
       alert(r);
     })
   }
-
+  name : any = {
+    "name" : "Harold"
+  }
   PostName(){
-    return this.api.PostName("Harold").subscribe(res => {
+    return this.api.PostName(this.name).subscribe(res => {
       let r = res;
       alert(r);
     })
