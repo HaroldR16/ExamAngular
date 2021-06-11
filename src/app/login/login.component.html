@@ -1,0 +1,39 @@
+<div class="content-wrapper">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+      
+          <!-- Login Form -->
+          <form [formGroup]="loginForm">
+
+            <label>Username</label>
+            <input id="Username" formControlName="Username" type="text" class="form-control" placeholder="Username">
+            <div *ngIf ="getControl.Username.invalid && (getControl.Username.dirty || getControl.Username.touched)" class="aler alert-danger">
+                <div *ngIf = "getControl.Username.errors?.required">
+                    Username name cant be empty
+                </div>
+                <div *ngIf = "getControl.Username.errors?.minlength">
+                    Not enough characters
+                </div>
+                <div *ngIf = "getControl.Username.errors?.maxlength">
+                    Characters out of the limit
+                </div>
+            </div>
+
+            <label>Password</label>
+            <input id="Password" formControlName="Password" type="password" class="form-control" placeholder="Password">
+            <div *ngIf ="getControl.Password.invalid && (getControl.Password.dirty || getControl.Password.touched)" class="aler alert-danger">
+                <div *ngIf = "getControl.Password.errors?.required">
+                    Password cant be empty
+                </div>
+                <div *ngIf = "getControl.Password.errors?.minlength">
+                    Not enough characters
+                </div>
+            </div>
+            <button class="btn button-primary" type="submit" href="home">
+              <a href="home" class="nav-link">Login</a>
+            </button>
+        </form>
+          
+        </div>
+      </div>
+</div>

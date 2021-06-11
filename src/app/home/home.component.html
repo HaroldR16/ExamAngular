@@ -1,0 +1,88 @@
+<div class="content-wrapper">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="home" class="nav-link">home</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="login" class="nav-link">Logout</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="detail" class="nav-link">Factories Details</a>
+          </li>
+        </ul>
+      </nav>
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Manufacturer Name</h5>
+        </div>
+        <div class="card-body">
+
+            <form [formGroup]="manufactureForm">
+
+                <label>Manufacturer Name</label>
+                <input id="ManufacturerName" formControlName="ManufacturerName" type="text" class="form-control" placeholder="ManufacturerName">
+                <div *ngIf ="getControl.ManufacturerName.invalid && (getControl.ManufacturerName.dirty || getControl.ManufacturerName.touched)" class="aler alert-danger">
+                    <div *ngIf = "getControl.ManufacturerName.errors?.required">
+                        Manufacturer name cant be empty
+                    </div>
+                    <div *ngIf = "getControl.ManufacturerName.errors?.minlength">
+                        Not enough characters
+                    </div>
+                    <div *ngIf = "getControl.ManufacturerName.errors?.maxlength">
+                        Characters out of the limit
+                    </div>
+                </div>
+
+                <label>Email</label>
+                <input id="Email" formControlName="Email" type="email" class="form-control" placeholder="Email">
+                <div *ngIf ="getControl.Email.invalid && (getControl.Email.dirty || getControl.Email.touched)" class="aler alert-danger">
+                    <div *ngIf = "getControl.Email.errors?.required">
+                        Email cant be empty
+                    </div>
+                    <div *ngIf = "getControl.Email.errors?.minlength">
+                        Not enough characters
+                    </div>
+                    <div *ngIf = "getControl.Email.errors?.email">
+                        Type a correct Email
+                    </div>
+                </div>
+
+                <label>Password</label>
+                <input id="Password" formControlName="Password" type="password" class="form-control" placeholder="Password">
+                <div *ngIf ="getControl.Password.invalid && (getControl.Password.dirty || getControl.Password.touched)" class="aler alert-danger">
+                    <div *ngIf = "getControl.Password.errors?.required">
+                        Password cant be empty
+                    </div>
+                    <div *ngIf = "getControl.Password.errors?.minlength">
+                        Not enough characters
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col 4"> 
+                    <button (click) = "GetGreeting()" class="button btn-primary">
+                        HELLO!
+                    </button>
+                </div>
+                <div class="col-4"> 
+                    <button (click) = "PostName()" class="button btn-primary">
+                    So my name is: 
+                    </button>
+                </div>
+                <!-- <div class="col-4"> 
+                    <button (click) = "" class="button btn-primary">
+                    Submit Data
+                    </button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

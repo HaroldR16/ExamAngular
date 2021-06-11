@@ -1,0 +1,106 @@
+<div class="content-wrapper">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="home" class="nav-link">home</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="login" class="nav-link">Logout</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="detail" class="nav-link">Factories Details</a>
+          </li>
+        </ul>
+      </nav>
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Manufacturer Name</h5>
+        </div>
+        <div class="card-body">
+
+            <form [formGroup]="manufactureForm">
+
+                <label>Main Factory</label>
+                <input id="MainFactory" formControlName="MainFactory" type="text" class="form-control" placeholder="Main Factory">
+                <div *ngIf ="getControl.MainFactory.invalid && (getControl.MainFactory.dirty || getControl.MainFactory.touched)" class="aler alert-danger">
+                    <div *ngIf = "getControl.MainFactory.errors?.required">
+                        Manufacturer name cant be empty
+                    </div>
+                    <div *ngIf = "getControl.MainFactory.errors?.minlength">
+                        Not enough characters
+                    </div>
+                    <div *ngIf = "getControl.MainFactory.errors?.maxlength">
+                        Characters out of the limit
+                    </div>
+                </div>
+
+                <label>Alternate Factory</label>
+                <input id="AlternateFactory" formControlName="AlternateFactory" type="text" class="form-control" placeholder="Alternate Factory">
+                <div *ngIf ="getControl.AlternateFactory.invalid && (getControl.AlternateFactory.dirty || getControl.AlternateFactory.touched)" class="aler alert-danger">
+                    <div *ngIf = "getControl.AlternateFactory.errors?.required">
+                        Alternate Factory name cant be empty
+                    </div>
+                    <div *ngIf = "getControl.AlternateFactory.errors?.minlength">
+                        Not enough characters
+                    </div>
+                    <div *ngIf = "getControl.AlternateFactory.errors?.maxlength">
+                        Characters out of the limit
+                    </div>
+                </div>
+
+                <label>Corporate Address</label>
+                <input id="CorporateAddress" formControlName="CorporateAddress" type="text" class="form-control" placeholder="Corporate Address">
+                <div *ngIf ="getControl.CorporateAddress.invalid && (getControl.CorporateAddress.dirty || getControl.CorporateAddress.touched)" class="aler alert-danger">
+                    <div *ngIf = "getControl.CorporateAddress.errors?.required">
+                        Corporate Address name cant be empty
+                    </div>
+                    <div *ngIf = "getControl.CorporateAddress.errors?.minlength">
+                        Not enough characters
+                    </div>
+                    <div *ngIf = "getControl.CorporateAddress.errors?.maxlength">
+                        Characters out of the limit
+                    </div>
+                </div>
+
+                <label>RFC</label>
+                <input id="RFC" formControlName="RFC" type="text" class="form-control" placeholder="RFC">
+                <div *ngIf ="getControl.RFC.invalid && (getControl.RFC.dirty || getControl.RFC.touched)" class="aler alert-danger">
+                    <div *ngIf = "getControl.RFC.errors?.required">
+                        Manufacturer name cant be empty
+                    </div>
+                    <div *ngIf = "getControl.RFC.errors?.minlength">
+                        Not enough characters
+                    </div>
+                    <div *ngIf = "getControl.RFC.errors?.maxlength">
+                        Characters out of the limit
+                    </div>
+                </div>
+
+                <label>Phone</label>
+                <input id="Phone" formControlName="Phone" type="text" class="form-control" placeholder="Phone (optional)">
+                
+                <label>Corporate Email</label>
+                <input id="CorporateEmail" formControlName="CorporateEmail" type="email" class="form-control" placeholder="CorporateEmail">
+                <div *ngIf ="getControl.CorporateEmail.invalid && (getControl.CorporateEmail.dirty || getControl.CorporateEmail.touched)" class="aler alert-danger">
+                    <div *ngIf = "getControl.CorporateEmail.errors?.required">
+                        Corporate Email cant be empty
+                    </div>
+                    <div *ngIf = "getControl.CorporateEmail.errors?.minlength">
+                        Not enough characters
+                    </div>
+                    <div *ngIf = "getControl.CorporateEmail.errors?.email">
+                        Type a correct Corporate Email
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="card-footer">
+
+        </div>
+    </div>
+</div>
